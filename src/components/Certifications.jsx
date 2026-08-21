@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion'
+
 const certificates = [
   { title: 'Digital Marketing', href: '/certificates/digital-marketing.html' },
   { title: 'Instagram Mastermind', href: '/certificates/instagram-mastermind.html' },
@@ -10,7 +12,14 @@ const certificates = [
 
 export default function Certifications() {
   return (
-    <section id="certificates" className="section certifications-section">
+    <motion.section
+      id="certificates"
+      className="section certifications-section"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.15 }}
+      transition={{ duration: 0.6, ease: 'easeOut' }}
+    >
       <div className="section-heading">
         <span>05</span>
         <h2>Certifications</h2>
@@ -27,25 +36,38 @@ export default function Certifications() {
 
           if (item.href) {
             return (
-              <a
+              <motion.a
                 className="cert-card cert-link"
                 href={item.href}
                 key={item.title}
                 target="_blank"
                 rel="noreferrer"
+                initial={{ opacity: 0, y: 18 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.25 }}
+                transition={{ duration: 0.35, delay: index * 0.04 }}
+                whileHover={{ y: -6, scale: 1.01 }}
               >
                 {content}
-              </a>
+              </motion.a>
             )
           }
 
           return (
-            <div className="cert-card" key={item.title}>
+            <motion.div
+              className="cert-card"
+              key={item.title}
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.25 }}
+              transition={{ duration: 0.35, delay: index * 0.04 }}
+              whileHover={{ y: -6, scale: 1.01 }}
+            >
               {content}
-            </div>
+            </motion.div>
           )
         })}
       </div>
-    </section>
+    </motion.section>
   )
 }

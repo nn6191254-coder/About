@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion'
+
 const experience = [
   {
     period: '2024 — Present',
@@ -17,15 +19,29 @@ const experience = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="section experience-section">
+    <motion.section
+      id="experience"
+      className="section experience-section"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.15 }}
+      transition={{ duration: 0.6, ease: 'easeOut' }}
+    >
       <div className="section-heading">
         <span>04</span>
         <h2>Work Experience</h2>
       </div>
 
       <div className="timeline">
-        {experience.map((item) => (
-          <article className="timeline-item" key={item.role}>
+        {experience.map((item, index) => (
+          <motion.article
+            className="timeline-item"
+            key={item.role}
+            initial={{ opacity: 0, x: -24 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.45, delay: index * 0.1 }}
+          >
             <div className="timeline-dot" />
             <div className="timeline-content">
               <p className="timeline-period">{item.period}</p>
@@ -33,9 +49,9 @@ export default function Experience() {
               <p className="timeline-company">{item.company}</p>
               <p>{item.details}</p>
             </div>
-          </article>
+          </motion.article>
         ))}
       </div>
-    </section>
+    </motion.section>
   )
 }
