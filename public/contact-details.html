@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Naveen</title>
+    <style>
+      :root {
+        --black: #080808;
+        --red: #ff2424;
+        --white: #f5f5f5;
+        --gray: #9a9a9a;
+        --panel: #121212;
+        --border: rgba(255,255,255,0.12);
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        background: var(--black);
+        font-family: Inter, Arial, sans-serif;
+        color: var(--white);
+      }
+
+      .card {
+        width: min(720px, calc(100% - 30px));
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: 24px;
+        padding: 40px 28px;
+        box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+      }
+
+      .eyebrow {
+        color: var(--red);
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 12px;
+      }
+
+      h1 {
+        margin: 18px 0 12px;
+        font-size: clamp(2.2rem, 5vw, 4rem);
+        line-height: 1.06;
+        letter-spacing: -0.06em;
+      }
+
+      p {
+        color: var(--gray);
+        font-size: 1.05rem;
+        margin: 0 0 28px;
+      }
+
+      .contact-list {
+        display: grid;
+        gap: 18px;
+      }
+
+      .contact-item {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 18px 20px;
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        background: rgba(255,255,255,0.02);
+      }
+
+      .label {
+        color: var(--gray);
+      }
+
+      .value {
+        font-weight: 700;
+        text-align: right;
+      }
+
+      .value a {
+        color: var(--white);
+        text-decoration: none;
+      }
+
+      .back {
+        display: inline-block;
+        margin-top: 28px;
+        color: var(--red);
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      @media (max-width: 600px) {
+        .contact-item {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .value {
+          text-align: left;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="eyebrow">Contact</div>
+      <h1>Let&apos;s connect.</h1>
+      <p>Feel free to reach out for freelance work, internships, or collaboration opportunities.</p>
+
+      <div class="contact-list">
+        <div class="contact-item">
+          <span class="label">Phone</span>
+          <span class="value"><a href="tel:+918431800592">8431800592</a></span>
+        </div>
+
+        <div class="contact-item">
+          <span class="label">Email</span>
+          <span class="value"><a href="mailto:nn6191254@gmail.com">nn6191254@gmail.com</a></span>
+        </div>
+      </div>
+
+      <a class="back" href="/">← Back to portfolio</a>
+    </div>
+  </body>
+</html>

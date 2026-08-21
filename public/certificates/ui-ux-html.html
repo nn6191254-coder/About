@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UI UX + HTML Certificate</title>
+    <style>
+      :root {
+        --paper: #f3f0ee;
+        --ink: #1d2c36;
+        --muted: #586b73;
+        --blue: #4d8bb3;
+        --blue-deep: #2d5d7e;
+        --gold: #c6a66a;
+        --gold-deep: #af8d42;
+        --shadow: rgba(0, 0, 0, 0.12);
+      }
+
+      * { box-sizing: border-box; }
+
+      html, body {
+        margin: 0;
+        min-height: 100%;
+        background: #d6d1ce;
+        font-family: Georgia, "Times New Roman", serif;
+        color: var(--ink);
+      }
+
+      body {
+        display: grid;
+        place-items: center;
+        min-height: 100vh;
+        padding: 18px;
+      }
+
+      .certificate {
+        width: min(1180px, 100%);
+        min-height: 840px;
+        background: var(--paper);
+        border: 4px solid var(--gold);
+        position: relative;
+        box-shadow: 0 0 0 8px rgba(198, 166, 106, 0.18), 0 24px 48px var(--shadow);
+        padding: 20px 40px 30px;
+      }
+
+      .certificate::before,
+      .certificate::after {
+        content: "";
+        position: absolute;
+        top: 14px;
+        bottom: 14px;
+        width: 10px;
+        background: linear-gradient(180deg, #d0aa62, #b88c3d);
+      }
+
+      .certificate::before { left: 14px; }
+      .certificate::after { right: 14px; }
+
+      .inner {
+        border: 2px solid rgba(185, 146, 78, 0.8);
+        min-height: 780px;
+        padding: 30px 40px 16px;
+        position: relative;
+      }
+
+      .inner::before,
+      .inner::after {
+        content: "";
+        position: absolute;
+        left: 30px;
+        right: 30px;
+        height: 18px;
+        border-top: 2px solid rgba(185, 146, 78, 0.75);
+        border-bottom: 2px solid rgba(185, 146, 78, 0.75);
+      }
+
+      .inner::before { top: 14px; }
+      .inner::after { bottom: 14px; }
+
+      .topbar {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 18px;
+        padding-top: 10px;
+      }
+
+      .college-wrap {
+        flex: 1;
+        text-align: center;
+        padding-top: 6px;
+      }
+
+      .college-title {
+        margin: 0;
+        font-weight: 600;
+        color: #2b3440;
+        line-height: 1.15;
+      }
+
+      .college-title .small {
+        display: block;
+        font-size: clamp(1.8rem, 2vw, 2.5rem);
+        font-style: italic;
+      }
+
+      .college-title .line2 {
+        display: block;
+        font-size: clamp(2.2rem, 2.6vw, 3.3rem);
+      }
+
+      .college-title .line3 {
+        display: block;
+        font-size: clamp(1.25rem, 1.6vw, 2rem);
+        letter-spacing: 0.03em;
+      }
+
+      .subline {
+        margin-top: 12px;
+        font-size: clamp(0.82rem, 1vw, 1.05rem);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #2d3a3d;
+        line-height: 1.5;
+      }
+
+      .badge {
+        width: 118px;
+        height: 118px;
+        border-radius: 12px;
+        background: linear-gradient(180deg, #2c8fd9, #1d5ea1);
+        border: 3px solid rgba(255,255,255,0.85);
+        box-shadow: inset 0 0 0 3px rgba(255,255,255,0.2);
+        position: relative;
+        margin-top: 4px;
+      }
+
+      .badge::before {
+        content: "KLE";
+        position: absolute;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        font-size: 24px;
+        font-weight: 700;
+        color: #eff9ff;
+        font-family: Arial, sans-serif;
+        letter-spacing: 0.05em;
+      }
+
+      .badge::after {
+        content: "Society";
+        position: absolute;
+        left: 8px;
+        right: 8px;
+        bottom: 10px;
+        text-align: center;
+        font-size: 12px;
+        color: #eaf7ff;
+        letter-spacing: 0.08em;
+        font-family: Arial, sans-serif;
+      }
+
+      .title {
+        margin-top: 36px;
+        text-align: center;
+        font-size: clamp(4rem, 7vw, 8.5rem);
+        letter-spacing: 0.06em;
+        color: #5b7c94;
+        line-height: 0.9;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+
+      .ornament {
+        position: relative;
+        width: min(420px, 66%);
+        height: 32px;
+        margin: 6px auto 0;
+      }
+
+      .ornament::before,
+      .ornament::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 13px;
+        height: 2px;
+        background: rgba(48, 62, 71, 0.7);
+      }
+
+      .ornament::after {
+        left: 50%;
+        width: 18px;
+        height: 18px;
+        right: auto;
+        top: 7px;
+        transform: translateX(-50%) rotate(45deg);
+        background: var(--paper);
+        border: 2px solid rgba(48, 62, 71, 0.7);
+      }
+
+      .award {
+        margin-top: 28px;
+        text-align: center;
+        font-size: clamp(1.45rem, 2vw, 2.2rem);
+        font-style: italic;
+        color: #2c3f49;
+      }
+
+      .name-row {
+        margin-top: 14px;
+        text-align: center;
+      }
+
+      .name-row .label {
+        display: inline-block;
+        font-size: clamp(1.3rem, 1.8vw, 1.9rem);
+        font-style: italic;
+        color: #384b58;
+        margin-right: 12px;
+        vertical-align: middle;
+      }
+
+      .name-row .name {
+        display: inline-block;
+        min-width: min(510px, 60vw);
+        border-bottom: 2px solid rgba(48, 62, 71, 0.75);
+        font-size: clamp(2rem, 2.8vw, 3rem);
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        color: #1e2a32;
+        padding-bottom: 4px;
+      }
+
+      .details {
+        margin-top: 18px;
+        text-align: center;
+        font-size: clamp(1.2rem, 1.7vw, 1.7rem);
+        color: #2d3d42;
+        line-height: 1.5;
+      }
+
+      .details .inline {
+        display: inline-block;
+      }
+
+      .details .reg {
+        display: inline-block;
+        min-width: 190px;
+        border-bottom: 2px solid rgba(48, 62, 71, 0.8);
+        margin: 0 8px;
+        font-style: normal;
+      }
+
+      .details strong {
+        font-weight: 700;
+      }
+
+      .details .italic {
+        font-style: italic;
+      }
+
+      .signature-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 30px;
+        margin-top: 100px;
+        padding: 0 20px 0 30px;
+      }
+
+      .sign-box {
+        width: 46%;
+        text-align: center;
+      }
+
+      .sign-box svg {
+        display: block;
+        width: 220px;
+        height: 80px;
+        margin: 0 auto 6px;
+      }
+
+      .sign-line {
+        width: 220px;
+        height: 2px;
+        background: rgba(48, 62, 71, 0.8);
+        margin: 0 auto 10px;
+      }
+
+      .sign-name {
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-weight: 700;
+        color: #26353d;
+      }
+
+      .sign-role {
+        font-size: 0.9rem;
+        line-height: 1.4;
+        color: #4c5f69;
+      }
+
+      .date-box {
+        width: 42%;
+        text-align: center;
+      }
+
+      .date-box .value {
+        display: inline-block;
+        width: 220px;
+        border-bottom: 2px solid rgba(48, 62, 71, 0.8);
+        padding-bottom: 8px;
+        font-size: 1.2rem;
+        color: #24353d;
+      }
+
+      .date-box .label {
+        display: block;
+        margin-top: 8px;
+        font-size: 0.9rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #4d5d68;
+      }
+
+      @media (max-width: 900px) {
+        .certificate {
+          padding: 14px 18px 22px;
+        }
+
+        .inner {
+          padding: 28px 18px 18px;
+        }
+
+        .topbar,
+        .signature-row {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+
+        .badge {
+          margin-top: 12px;
+        }
+
+        .name-row .name {
+          min-width: 0;
+        }
+
+        .sign-box,
+        .date-box {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="certificate">
+      <div class="inner">
+        <div class="topbar">
+          <div class="college-wrap">
+            <h1 class="college-title">
+              <span class="small">KLE Society's</span>
+              <span class="line2">G.H. BCA College</span>
+              <span class="line3">Haveri, Karnataka 581110</span>
+            </h1>
+            <div class="subline">
+              AFFILIATED TO HAVERI UNIVERSITY, HAVERI<br />
+              APPROVED BY AICTE, MINISTRY OF EDUCATION, GOVT. OF INDIA
+            </div>
+          </div>
+          <div class="badge" aria-label="KLE Society badge"></div>
+        </div>
+
+        <div class="title">Certificate</div>
+        <div class="ornament" aria-hidden="true"></div>
+
+        <div class="award">This certificate is awarded to</div>
+
+        <div class="name-row">
+          <span class="label">Mr. / Ms.</span>
+          <span class="name">NAVEEN CHOUDHARI</span>
+        </div>
+
+        <div class="details">
+          <span class="inline"><strong>Reg. No:</strong> <span class="reg">U30WO24S0045</span> for successfully completing the</span><br />
+          <span class="italic">48 Hours "Certificate and Workshop in UI + HTML"</span><br />
+          during 21 Feb 2025 to 2 Mar 2025 in Association with<br />
+          <strong>Seminarroom Education Pvt. Ltd</strong><br />
+          during the Academic Year 2024-2025.
+        </div>
+
+        <div class="signature-row">
+          <div class="sign-box">
+            <svg viewBox="0 0 240 80" aria-label="Signature" role="img">
+              <path d="M18 48 C29 38, 38 31, 49 31 C60 31, 69 39, 69 47 C69 56, 61 63, 48 64 C35 64, 26 58, 27 48 C28 38, 37 31, 48 29 C64 27, 76 34, 86 43 C93 49, 98 57, 110 59 C120 60, 129 56, 136 48 C144 39, 153 34, 164 34 C176 35, 182 42, 183 50 C185 62, 175 69, 161 69 C149 69, 137 62, 127 53 C117 43, 106 37, 93 35 C80 34, 72 39, 72 49 C72 59, 80 65, 92 67 C109 70, 126 66, 140 58" fill="none" stroke="#3a7ea5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <div class="sign-line"></div>
+            <div class="sign-name">K.N. Punith Raj</div>
+            <div class="sign-role">CEO &amp; Founder, Seminarroom<br />Education Pvt. Ltd</div>
+          </div>
+
+          <div class="sign-box">
+            <svg viewBox="0 0 240 80" aria-label="Signature" role="img">
+              <path d="M23 52 C42 45, 53 38, 67 32 C80 27, 95 26, 111 31 C120 34, 126 41, 128 48 C130 57, 124 66, 112 69 C101 72, 89 68, 82 61 C75 54, 74 43, 85 37 C96 31, 112 35, 128 46 C142 56, 157 59, 170 52 C176 48, 182 40, 191 34 C200 28, 212 30, 220 35" fill="none" stroke="#4c8b7c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <div class="sign-line"></div>
+            <div class="sign-name">Prof. Venkatesh Kalar</div>
+            <div class="sign-role">Principal, KLE Society's<br />G. H. BCA College, Haveri</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
