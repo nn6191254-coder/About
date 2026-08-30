@@ -31,6 +31,12 @@ const categories = [
   },
 ]
 
+const languages = [
+  { name: 'Kannada', proficiency: 100 },
+  { name: 'Hindi', proficiency: 100 },
+  { name: 'English', proficiency: 80 },
+]
+
 export default function Skills() {
   return (
     <motion.section
@@ -77,6 +83,48 @@ export default function Skills() {
             </div>
           </motion.div>
         ))}
+
+        <motion.div
+          className="skill-group language-group"
+          initial={{ opacity: 0, y: 22 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.45, delay: categories.length * 0.08 }}
+        >
+          <div className="skill-group-header">
+            <div className="skill-group-icon">
+              <Globe size={18} />
+            </div>
+            <h3>Languages</h3>
+          </div>
+
+          <div className="language-list">
+            {languages.map(({ name, proficiency }, index) => (
+              <motion.div
+                key={name}
+                className="language-item"
+                initial={{ opacity: 0, x: -10 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 0.3, delay: index * 0.05 }}
+              >
+                <div className="language-header">
+                  <span className="language-name">{name}</span>
+                  <span className="language-percentage">{proficiency}%</span>
+                </div>
+                <div className="language-bar">
+                  <motion.div
+                    className="language-bar-fill"
+                    initial={{ width: 0 }}
+                    whileInView={{ width: `${proficiency}%` }}
+                    viewport={{ once: true, amount: 0.5 }}
+                    transition={{ duration: 0.8, delay: index * 0.05 + 0.2 }}
+                  />
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </motion.section>
   )
