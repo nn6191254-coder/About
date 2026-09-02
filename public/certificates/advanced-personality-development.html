@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced Personality Development Certificate</title>
+    <style>
+      :root {
+        --bg-1: #0f9de5;
+        --bg-2: #56c8ff;
+        --light: #f3f4f6;
+        --text: #0b2431;
+        --blue: #1ea8f8;
+        --blue-deep: #0d6fb6;
+        --gold: #d8a74d;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(135deg, var(--bg-1), var(--bg-2));
+        font-family: Arial, Helvetica, sans-serif;
+        color: var(--text);
+      }
+
+      .certificate {
+        width: min(1200px, 95vw);
+        min-height: 760px;
+        background: #f5f5f5;
+        border-radius: 0;
+        position: relative;
+        overflow: hidden;
+        padding: 40px 60px 35px;
+        box-shadow: 0 30px 80px rgba(0,0,0,0.2);
+      }
+
+      .top-wave {
+        position: absolute;
+        left: -5%;
+        right: -5%;
+        top: -70px;
+        height: 180px;
+        border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+        background: linear-gradient(180deg, rgba(17, 130, 185, 0.8), rgba(20, 118, 182, 0.55));
+        border-top: 8px solid rgba(14, 78, 117, 0.8);
+        transform: rotate(0deg);
+      }
+
+      .top-wave::before,
+      .top-wave::after {
+        content: "";
+        position: absolute;
+        inset: 14px 0 auto 0;
+        height: 90px;
+        border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+        background: rgba(255,255,255,0.08);
+      }
+
+      .right-rail {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 120px;
+        height: 100%;
+        background: linear-gradient(180deg, #1fb0ff, #0d76c0);
+        clip-path: polygon(25% 0, 100% 0, 100% 100%, 0 100%);
+        opacity: 0.9;
+      }
+
+      .right-rail::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: repeating-linear-gradient(
+          to bottom,
+          rgba(255,255,255,0.08),
+          rgba(255,255,255,0.08) 2px,
+          transparent 2px,
+          transparent 8px
+        );
+      }
+
+      .logo-row {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-top: 110px;
+        margin-left: 30px;
+        font-weight: 700;
+      }
+
+      .book-mark {
+        width: 36px;
+        height: 36px;
+        border-radius: 12px 12px 0 12px;
+        background: linear-gradient(180deg, #17a1e9, #0f7cc5);
+        position: relative;
+        transform: rotate(-12deg);
+        box-shadow: inset 0 0 0 3px rgba(255,255,255,0.3);
+      }
+
+      .book-mark::before {
+        content: "";
+        position: absolute;
+        inset: 8px 8px 8px 8px;
+        border-radius: 50%;
+        border: 3px solid rgba(255,255,255,0.9);
+        border-top-color: transparent;
+        border-left-color: transparent;
+        transform: rotate(45deg);
+      }
+
+      .brand {
+        font-size: clamp(2.1rem, 2.2vw, 3rem);
+        letter-spacing: -0.06em;
+        color: #1aa0e8;
+        font-family: Georgia, serif;
+      }
+
+      .title-wrap {
+        display: flex;
+        justify-content: center;
+        margin-top: 28px;
+      }
+
+      .title-box {
+        background: rgba(27, 27, 27, 0.9);
+        color: white;
+        padding: 14px 28px;
+        font-size: clamp(1.3rem, 1.5vw, 2.3rem);
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-weight: 800;
+      }
+
+      .content {
+        margin-top: 42px;
+        max-width: 700px;
+        margin-left: 30px;
+      }
+
+      .small {
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-size: 1.05rem;
+        color: #4a4a4a;
+      }
+
+      .name {
+        margin-top: 26px;
+        font-size: clamp(2.1rem, 2.4vw, 3.1rem);
+        font-weight: 700;
+        color: #2d2d2d;
+        text-align: center;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #6ab7ea;
+        max-width: 500px;
+        margin-left: 30px;
+      }
+
+      .lead {
+        margin-top: 30px;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 1.15rem;
+        letter-spacing: 0.12em;
+        color: #3c3f43;
+      }
+
+      .course {
+        margin-top: 26px;
+        text-align: center;
+        font-size: clamp(1.8rem, 1.8vw, 2.5rem);
+        font-weight: 700;
+        color: #1c1d1f;
+        border-bottom: 2px solid #6ab7ea;
+        max-width: 600px;
+        margin-left: 30px;
+        padding-bottom: 10px;
+      }
+
+      .foot {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-top: 70px;
+        padding: 0 20px 0 30px;
+        gap: 30px;
+      }
+
+      .signature {
+        min-width: 240px;
+      }
+
+      .signature-svg {
+        width: 180px;
+        height: 60px;
+        display: block;
+        margin-bottom: 8px;
+        filter: drop-shadow(0 0 1px rgba(25, 115, 150, 0.15));
+      }
+
+      .signature-line {
+        width: 180px;
+        border-bottom: 2px solid #5fb4eb;
+        margin-top: 8px;
+      }
+
+      .sig-name {
+        margin-top: 12px;
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-weight: 700;
+        color: #2e2e30;
+      }
+
+      .sig-role {
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+        font-size: 0.9rem;
+        color: #4d4d4d;
+      }
+
+      .date-box {
+        min-width: 220px;
+      }
+
+      .date-line {
+        border-bottom: 2px solid #5fb4eb;
+        margin-top: 42px;
+        font-size: 1.2rem;
+        padding-bottom: 10px;
+        text-align: center;
+      }
+
+      .date-label {
+        margin-top: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-size: 0.9rem;
+        text-align: center;
+        color: #4d4d4d;
+      }
+
+      .seal {
+        position: absolute;
+        right: 120px;
+        top: 250px;
+        width: 230px;
+        height: 230px;
+        border-radius: 50%;
+        background: linear-gradient(180deg, #1aa4f4, #0a7fc0);
+        border: 16px solid rgba(255,255,255,0.6);
+        box-shadow: 0 0 0 8px rgba(26, 148, 224, 0.15);
+        display: grid;
+        place-items: center;
+      }
+
+      .seal-inner {
+        width: 170px;
+        height: 170px;
+        border-radius: 50%;
+        background: #f8f8f8;
+        display: grid;
+        place-items: center;
+        position: relative;
+      }
+
+      .seal-inner::before {
+        content: "";
+        position: absolute;
+        inset: 12px;
+        border: 3px solid rgba(216, 167, 77, 0.9);
+        border-radius: 50%;
+      }
+
+      .trophy {
+        position: relative;
+        width: 82px;
+        height: 82px;
+      }
+
+      .trophy::before {
+        content: "";
+        position: absolute;
+        left: 18px;
+        right: 18px;
+        bottom: 0;
+        height: 20px;
+        border-radius: 10px 10px 0 0;
+        background: linear-gradient(180deg, #d7a75d, #b97a28);
+      }
+
+      .trophy::after {
+        content: "";
+        position: absolute;
+        left: 12px;
+        bottom: 22px;
+        width: 58px;
+        height: 42px;
+        background: linear-gradient(180deg, #d7a75d, #b97a28);
+        border-radius: 16px 16px 18px 18px;
+        box-shadow: -20px 0 0 -8px #d7a75d, 20px 0 0 -8px #d7a75d;
+      }
+
+      .trophy .stem {
+        position: absolute;
+        left: 35px;
+        bottom: -24px;
+        width: 10px;
+        height: 36px;
+        background: #d7a75d;
+        border-radius: 6px;
+      }
+
+      .trophy .base {
+        position: absolute;
+        left: 20px;
+        bottom: -40px;
+        width: 42px;
+        height: 12px;
+        background: #d7a75d;
+        border-radius: 8px;
+      }
+
+      @media (max-width: 900px) {
+        .certificate {
+          padding: 30px 24px 25px;
+        }
+
+        .seal {
+          position: static;
+          margin: 30px auto 0;
+        }
+
+        .content,
+        .name,
+        .course,
+        .foot {
+          margin-left: 0;
+        }
+
+        .foot {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="certificate">
+      <div class="top-wave"></div>
+      <div class="right-rail"></div>
+
+      <div class="logo-row">
+        <div class="book-mark"></div>
+        <div class="brand">Bizgurukul</div>
+      </div>
+
+      <div class="title-wrap">
+        <div class="title-box">Certificate of Completion</div>
+      </div>
+
+      <div class="content">
+        <div class="small">This certificate is proudly presented to:</div>
+      </div>
+
+      <div class="name">Naveen C</div>
+
+      <div class="lead">For successfully completing the</div>
+      <div class="course">Advanced Personality Development</div>
+
+      <div class="foot">
+        <div class="signature">
+          <svg class="signature-svg" viewBox="0 0 220 70" aria-label="Founder signature" role="img">
+            <path d="M18 45
+                     C25 26, 38 14, 55 15
+                     C69 16, 78 29, 74 39
+                     C70 49, 57 54, 45 50
+                     C35 47, 32 39, 35 31
+                     C38 22, 48 18, 60 20
+                     C72 22, 80 31, 84 39
+                     C88 49, 88 57, 79 61
+                     C70 65, 56 63, 48 53
+                     C40 43, 43 31, 55 26
+                     C67 21, 82 23, 92 31
+                     C101 38, 108 50, 115 49
+                     C120 48, 121 42, 117 37
+                     C112 30, 105 27, 98 26
+                     C89 25, 80 31, 80 39
+                     C80 47, 88 53, 97 55
+                     C108 58, 120 55, 130 47
+                     C139 40, 146 29, 157 24
+                     C169 18, 184 20, 195 30
+                     C204 38, 208 49, 201 56
+                     C194 62, 183 63, 174 58
+                     C165 54, 159 47, 153 40
+                     C146 32, 139 26, 129 26
+                     C120 26, 112 34, 111 43
+                     C111 52, 118 59, 129 60
+                     C139 61, 148 57, 156 50"
+                  fill="none" stroke="#3a9ad1" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div class="signature-line"></div>
+          <div class="sig-name">Ritwiz Tiwari</div>
+          <div class="sig-role">(Founder &amp; Ceo)</div>
+        </div>
+
+        <div class="date-box">
+          <div class="date-line">04/08/2026</div>
+          <div class="date-label">Date</div>
+        </div>
+      </div>
+
+      <div class="seal" aria-label="award seal">
+        <div class="seal-inner">
+          <div class="trophy">
+            <div class="stem"></div>
+            <div class="base"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+

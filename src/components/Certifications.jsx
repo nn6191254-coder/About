@@ -4,6 +4,12 @@ const certificates = [
   { title: 'Digital Marketing', href: '/certificates/digital-marketing.html' },
   { title: 'Instagram Mastermind', href: '/certificates/instagram-mastermind.html' },
   { title: 'Video Super Mastery', href: '/certificates/video-super-mastery.html' },
+  { title: 'Email Marketing', href: '/certificates/email-marketing.html' },
+  { title: 'MS PowerPoint Mastery', href: '/certificates/ms-powerpoint-mastery.html' },
+  { title: 'Spoken English Mastery', href: '/certificates/spoken-english-mastery.html' },
+  { title: 'Facebook Messenger Marketing (Chatbot)', href: '/certificates/facebook-messenger-marketing-chatbot.html' },
+  { title: 'Advanced Personality Development', href: '/certificates/advanced-personality-development.html' },
+  { title: 'LinkedIn Mastery', href: '/certificates/linkedin-mastery.html' },
   { title: 'Web Development Fundamentals', href: null },
   { title: 'Advanced Machine Learning Using Python', href: '/certificates/advanced-machine-learning-python.html' },
   { title: 'Fullstack Java Development', href: '/certificates/fullstack-java-development.html' },
@@ -29,7 +35,7 @@ export default function Certifications() {
         {certificates.map((item, index) => {
           const content = (
             <>
-              <span>{`0${index + 1}`}</span>
+              <span>{String(index + 1).padStart(2, '0')}</span>
               <h3>{item.title}</h3>
             </>
           )
