@@ -24,7 +24,7 @@ const projects = [
       'A modern, interactive clock website designed with a creative visual interface and clean responsive layout.',
     tech: ['HTML', 'CSS', 'JavaScript'],
     github: 'https://github.com/nn6191254-coder/anticlock',
-    demo: '/projects/anticlock.html',
+    demo: 'https://clock-qk79.onrender.com',
   },
   {
     number: '04',
@@ -51,7 +51,7 @@ const projects = [
       'A sleek calculator app built with interactive numeric logic, responsive layout, and clean UI for everyday use.',
     tech: ['HTML', 'CSS', 'JavaScript'],
     github: 'https://github.com/nn6191254-coder/calculator',
-    demo: '/projects/calculator.html',
+    demo: 'https://calculator-yzap.onrender.com',
   },
   {
     number: '07',
@@ -60,7 +60,7 @@ const projects = [
       'A mobile-first portfolio application built with Flutter to showcase skills, projects, and profile details in a polished app experience.',
     tech: ['Flutter', 'Dart', 'Material 3'],
     github: 'https://github.com/nn6191254-coder/flutter-portfolio',
-    demo: '/projects/flutter-portfolio.html',
+    demo: 'https://about-nzy1.onrender.com',
   },
   {
     number: '08',
@@ -70,6 +70,22 @@ const projects = [
     tech: ['AI', 'Product Design', 'Automation'],
     github: 'https://github.com/nn6191254-coder/hexabrain',
     demo: '/projects/hexbraing.html',
+  },
+  {
+    number: '09',
+    title: 'Fake Message Detector',
+    description:
+      'A web app for checking messages for signs of misleading or potentially fake content.',
+    tech: ['HTML', 'CSS', 'JavaScript'],
+    demo: 'https://fakemsgdetector.onrender.com',
+  },
+  {
+    number: '10',
+    title: 'Password Strength Checker',
+    description:
+      'A password utility that evaluates password strength and helps users create more secure credentials.',
+    tech: ['HTML', 'CSS', 'JavaScript'],
+    demo: 'https://possowordcheck.onrender.com',
   },
 ]
 

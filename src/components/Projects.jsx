@@ -62,7 +62,7 @@ export default function Projects() {
                     GitHub <ArrowUpRight size={16} />
                   </a>
                 ) : null}
-                <a href={project.demo} rel="noreferrer">
+                <a href={project.demo} target="_blank" rel="noreferrer">
                   Live Demo <ExternalLink size={16} />
                 </a>
               </div>
