@@ -14,8 +14,14 @@ export default function Footer() {
           <a href="https://github.com/nn6191254-coder" target="_blank" rel="noreferrer">
             GitHub
           </a>
-          <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">
+          <a href="https://www.instagram.com/nanaveen7630/" target="_blank" rel="noreferrer">
+            Instagram
+          </a>
+          <a href="https://www.linkedin.com/in/naveen-c-1b2b0b342/?isSelfProfile=true" target="_blank" rel="noreferrer">
             LinkedIn
+          </a>
+          <a href="https://x.com/NaNaveen2102" target="_blank" rel="noreferrer">
+            X
           </a>
           <a href="mailto:naveen@example.com">Email</a>
         </div>

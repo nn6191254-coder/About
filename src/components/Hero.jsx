@@ -62,7 +62,7 @@ export default function Hero() {
           </motion.a>
 
           <motion.a
-            href="https://www.linkedin.com"
+            href="https://www.linkedin.com/in/naveen-c-1b2b0b342/?isSelfProfile=true"
             target="_blank"
             rel="noreferrer"
             aria-label="LinkedIn"

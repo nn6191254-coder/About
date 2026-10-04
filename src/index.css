@@ -1087,6 +1087,7 @@ main {
 .footer-links {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 18px;
   color: var(--gray);
 }
@@ -1217,4 +1218,3 @@ main {
     scroll-behavior: auto !important;
   }
 }
-

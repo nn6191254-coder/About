@@ -69,7 +69,7 @@ const projects = [
       'A smart AI-driven project concept focused on structured intelligence, automation, and scalable digital workflows.',
     tech: ['AI', 'Product Design', 'Automation'],
     github: 'https://github.com/nn6191254-coder/hexabrain',
-    demo: '/projects/hexbraing.html',
+    demo: 'https://acp-kxgx.onrender.com',
   },
   {
     number: '09',
@@ -86,6 +86,14 @@ const projects = [
       'A password utility that evaluates password strength and helps users create more secure credentials.',
     tech: ['HTML', 'CSS', 'JavaScript'],
     demo: 'https://possowordcheck.onrender.com',
+  },
+  {
+    number: '11',
+    title: 'Iris Classification',
+    description:
+      'A machine-learning project for classifying iris flowers using their measured characteristics.',
+    tech: ['Machine Learning', 'Classification'],
+    demo: 'https://iris-1-6b9y.onrender.com',
   },
 ]
 
